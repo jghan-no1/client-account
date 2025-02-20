@@ -40,15 +40,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 				url = "https://www.eazybytes.com/swagger-ui.html"
 		)
 )
-@RestController
 public class AccountsApplication {
 
-	@GetMapping("/pod-name")
-	public String getMethodName() {
-        String podName = System.getenv("HOSTNAME");
-        return "Pod Name: " + (podName != null ? podName : "unknown");
-	}
-	
 	public static void main(String[] args) {
 		SpringApplication.run(AccountsApplication.class, args);
 	}
