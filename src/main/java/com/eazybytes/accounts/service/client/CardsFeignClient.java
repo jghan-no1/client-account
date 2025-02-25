@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface CardsFeignClient {
 
     // @GetMapping(value = "/api/fetch",consumes = "application/json")
-    @GetMapping(value = "/card/pod-name")
+    @GetMapping(value = "/api/card/pod-name")
     public String getCardPodName();
     // public ResponseEntity<CardsDto> fetchCardDetails(@RequestHeader("eazybank-correlation-id")
     //                                                      String correlationId, @RequestParam String mobileNumber);
