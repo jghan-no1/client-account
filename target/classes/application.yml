@@ -69,6 +69,19 @@ resilience4j.retry:
       retryExceptions:
         - java.util.concurrent.TimeoutException
 
+eureka:
+  instance:
+    preferIpAddress: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+    hostname: ${HOSTNAME}
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      # defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: http://team6-eureka-server:8761/eureka/
+      
 logging:
   level:
     com:
