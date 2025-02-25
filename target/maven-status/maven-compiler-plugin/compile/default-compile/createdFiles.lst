@@ -1,7 +1,9 @@
 com/eazybytes/accounts/dto/ResponseDto.class
+com/eazybytes/accounts/service/client/LoansFeignClient.class
 com/eazybytes/accounts/constants/AccountsConstants.class
 com/eazybytes/accounts/controller/AccountsController.class
 com/eazybytes/accounts/exception/CustomerAlreadyExistsException.class
+com/eazybytes/accounts/service/client/CardsFeignClient.class
 com/eazybytes/accounts/mapper/AccountsMapper.class
 com/eazybytes/accounts/repository/AccountsRepository.class
 com/eazybytes/accounts/mapper/CustomerMapper.class

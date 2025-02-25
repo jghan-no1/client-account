@@ -14,15 +14,24 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import com.eazybytes.accounts.service.client.CardsFeignClient;
+import com.eazybytes.accounts.service.client.LoansFeignClient;
 /**
  * @author Eazy Bytes
  */
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Tag(
         name = "CRUD REST APIs for Accounts in EazyBank",
@@ -163,10 +172,24 @@ public class AccountsController {
     }
     @GetMapping("/pod-name")
         public String getMethodName() {
-        String podName = System.getenv("HOSTNAME");
-        return "Pod Name: " + (podName != null ? podName : "unknown");
+            String podName = System.getenv("HOSTNAME");
+            return "Pod Name: " + (podName != null ? podName : "unknown");
     }
-	
 
+    private final CardsFeignClient cardsFeignClient;
+    private final LoansFeignClient loansFeignClient;
 
+    public AccountsController(CardsFeignClient cardsFeignClient, LoansFeignClient loansFeignClient) {
+        this.cardsFeignClient = cardsFeignClient;
+        this.loansFeignClient = loansFeignClient;
+    }
+
+    @GetMapping("all-pod-name")
+    public Map<String, String> getAllPodName() {
+        Map<String, String> response = new HashMap<>();
+        response.put("card", cardsFeignClient.getCardPodName());
+        response.put("loan", loansFeignClient.getLoanPodName());
+        return response;
+    }
+    
 }

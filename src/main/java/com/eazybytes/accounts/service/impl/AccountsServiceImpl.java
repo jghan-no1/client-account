@@ -15,7 +15,8 @@ import com.eazybytes.accounts.service.IAccountsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+
+// import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
@@ -25,6 +26,8 @@ public class AccountsServiceImpl  implements IAccountsService {
 
     private AccountsRepository accountsRepository;
     private CustomerRepository customerRepository;
+    // private CardsFeignClient cardsFeignClient;
+    // private LoansFeignClient loansFeignClient;
 
     /**
      * @param customerDto - CustomerDto Object

@@ -17,4 +17,6 @@
 /Users/linalee/jghan/eureka/client/accounts/src/main/java/com/eazybytes/accounts/repository/AccountsRepository.java
 /Users/linalee/jghan/eureka/client/accounts/src/main/java/com/eazybytes/accounts/repository/CustomerRepository.java
 /Users/linalee/jghan/eureka/client/accounts/src/main/java/com/eazybytes/accounts/service/IAccountsService.java
+/Users/linalee/jghan/eureka/client/accounts/src/main/java/com/eazybytes/accounts/service/client/CardsFeignClient.java
+/Users/linalee/jghan/eureka/client/accounts/src/main/java/com/eazybytes/accounts/service/client/LoansFeignClient.java
 /Users/linalee/jghan/eureka/client/accounts/src/main/java/com/eazybytes/accounts/service/impl/AccountsServiceImpl.java
