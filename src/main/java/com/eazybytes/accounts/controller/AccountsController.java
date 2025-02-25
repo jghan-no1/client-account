@@ -18,19 +18,19 @@ import lombok.AllArgsConstructor;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
+/**
+ * @author Eazy Bytes
+ */
 import org.springframework.web.bind.annotation.*;
 
 import com.eazybytes.accounts.service.client.CardsFeignClient;
 import com.eazybytes.accounts.service.client.LoansFeignClient;
-/**
- * @author Eazy Bytes
- */
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Tag(
@@ -40,6 +40,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 @RequestMapping(path="/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 @AllArgsConstructor
+@Component
 @Validated
 public class AccountsController {
 
@@ -178,7 +179,7 @@ public class AccountsController {
 
     private final CardsFeignClient cardsFeignClient;
     private final LoansFeignClient loansFeignClient;
-
+    @Autowired
     public AccountsController(CardsFeignClient cardsFeignClient, LoansFeignClient loansFeignClient) {
         this.cardsFeignClient = cardsFeignClient;
         this.loansFeignClient = loansFeignClient;
