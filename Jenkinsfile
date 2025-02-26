@@ -3,7 +3,7 @@ pipeline {
     environment {
         REGISTRY = "k8s-vga-worker1:5000"
         IMAGE_NAME = "group1-team6-eureka-client-account"
-        IMAGE_TAG = "v1.6"
+        IMAGE_TAG = "v1.7"
         CONTAINER_NAME = "team6-eureka-client-account"
         NAMESPACE = "group1-team6"
         JAVA_HOME = "/usr/local/java21"
