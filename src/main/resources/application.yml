@@ -1,5 +1,5 @@
 server:
-  port: 9206
+  port: 9010
 
 spring:
   profiles:
