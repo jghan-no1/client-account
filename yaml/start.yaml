@@ -5,7 +5,7 @@ metadata:
   name: team6-eureka-client-account
   namespace: group1-team6
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: team6-eureka-client-account
@@ -17,9 +17,9 @@ spec:
       containers:
       - name: team6-eureka-client-account
         image: k8s-vga-worker1:5000/group1-team6-eureka-client-account
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
-        - containerPort: 9010
+        - containerPort: 9206
 ---
 # apiVersion: v1
 # kind: Service

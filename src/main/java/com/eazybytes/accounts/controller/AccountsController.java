@@ -3,7 +3,7 @@ package com.eazybytes.accounts.controller;
 import java.net.InetAddress;
 import java.util.concurrent.TimeoutException;
 
-import io.github.resilience4j.retry.annotation.Retry;
+// import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
