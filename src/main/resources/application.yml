@@ -6,7 +6,7 @@ server:
 
 spring:
   profiles:
-    active: "prod"
+    active: "local"
   application:
     name: "accounts-jghan"
   datasource:
@@ -39,9 +39,16 @@ management:
     env:
       enabled: true
 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+
 info:
   app:
-    name: "accounts"
+    name: "accountss"
     description: "Eazy Bank Accounts Application"
     version: "1.0.0"
 
@@ -64,18 +71,6 @@ resilience4j.retry:
         - java.lang.NullPointerException
       retryExceptions:
         - java.util.concurrent.TimeoutException
-
-eureka:
-  instance:
-    # lease-renewal-interval-in-seconds: 10
-    # lease-expiration-duration-in-seconds: 30
-    preferIpAddress: true
-    # hostname: ${HOSTNAME}
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: http://team6-eureka-server:8761/eureka/
 
 logging:
   level:
